@@ -14,15 +14,30 @@ window.addEventListener("scroll", () => {
   } else {
     navbar.style.height = "90px";
   }
-  console.log(window.scrollY);
 });
+// Ci-dessus, navbar est un Id, donc on peut l'appeler directement dans notre fonction. Si cela avait été une classe (au lieu d'un Id), il aurait d'abord fallu l'affecter à une constante avec le querySelector, ce qui aurait donné : const navbar = document.querySelector("navbar")
 
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 300) {
+  if (window.scrollY > 220) {
     imgImprovise.style.opacity = "1";
     imgImprovise.style.transform = "translateX(0px)";
   } else {
     imgImprovise.style.opacity = "0";
     imgImprovise.style.transform = "translateX(-200px)";
   }
+});
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 1150) {
+    popup.style.opacity = "1";
+    popup.style.transform = "translateX(0px)";
+  } else {
+    popup.style.opacity = "0";
+    popup.style.transform = "translateX(400px)";
+  }
+});
+
+window.addEventListener("click", () => {
+  popup.style.opacity = "0";
+  popup.style.transform = "translateX(400px)";
 });
